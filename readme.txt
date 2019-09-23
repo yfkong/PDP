@@ -1,6 +1,7 @@
 A modeling and heuristic algorithm framework for solving political districting problem or similar problems.
+------------Sponsored by the National Natural Science Foundation of China (no. 41871307)
 
-Yunfeng Kong, Yanfang Zhu & Yujing Wang (2019) A center-based modeling approach to solve the districting problem, International Journal of Geographical Information Science, 33:2, 368-384, DOI: 10.1080/13658816.2018.1474472
+For definition and mathematical formulation of political districting problem, see: Yunfeng Kong, Yanfang Zhu & Yujing Wang (2019) A center-based modeling approach to solve the districting problem, International Journal of Geographical Information Science, 33:2, 368-384, DOI: 10.1080/13658816.2018.1474472
 
 Multiple methods are provided to solve the political districting problem:
 *center-based modeling
@@ -20,8 +21,12 @@ set solver parameters: solver name, multi_start, loops, is_scp_modeling, and ran
 solvers include: ils, mip, vnd, vns, sa, hc ... 
 for 'mip' solver, the loops and is_scp_modeling are not used. The solver other than MIP is not provided in this version.
 >>>pdp.solve() # solve the problem. 
->>pdp.print_solution() #output the solution.
+>>>pdp.print_solution() #output the solution.
 
+or using genetic algorithm:
+>>>pdp.set_districting(4,0.0,1.0)
+>>>pdp.ga(10,1000, 0, 0.7, 0.03,0,-1)
+parameters: population size, generations, crossover method, crossover rate, mutation rate, spp/scp selection and random seed
 
 You may also edit the sample file "sample.py", and run it directly.
 ____________________________________________________________________________________
@@ -68,3 +73,4 @@ OID,ID1,ID2
 The two units in each line are adjacent. 
 
 If you have any question, email: yfkong@henu.edu.cn.
+Sponsored by the National Natural Science Foundation of China (no. 41871307)
